@@ -12,24 +12,45 @@ def create_grass(grass_img):
     return grass
 
 def draw_grass(grass):
-    screen.fill((0, 0, 0))
-    screen.blit(grass, (random.choice(0,200)))
+    grass = pygame.transform.scale(grass, (40, 40))
+    screen.blit(grass, (random.choice(20,400),(random.choice(20,400))))
     pygame.display.flip()
 
 
+pygame.init()
+screen = pygame.display.set_mode((consts.WINDOW_WIDTH, consts.WINDOW_HEIGHT))
+clock = pygame.time.Clock()
+SOLDIER_IMG = pygame.image.load("bin\soldier.png")
+player_size = 50
+soldier_resized = pygame.transform.scale(SOLDIER_IMG, (player_size, player_size))
+DARK_GREEN = (0, 100, 0)
+player_x = 0
+player_y = 0
+running = True
 while running:
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            running = False
-
-    screen.fill("Dark green")
-
-    grass = create_grass("bin/grass.png")
-    pygame.transform.scale(grass, (5,2))
-    draw_grass(grass)
-    pygame.display.flip()
-    clock.tick(60)
+   clock.tick(60)
+   for event in pygame.event.get():
+       if event.type == pygame.QUIT:
+           running = False
+   keys = pygame.key.get_pressed()
+   if keys[pygame.K_LEFT]:
+       player_x -= 5
+   if keys[pygame.K_RIGHT]:
+       player_x += 5
+   if keys[pygame.K_UP]:
+       player_y -= 5
+   if keys[pygame.K_DOWN]:
+       player_y += 5
+   screen.fill(DARK_GREEN)
+   grass = create_grass("bin/grass.png")
+   pygame.transform.scale(grass, (5, 2))
+   draw_grass(grass)
+   screen.blit(soldier_resized, (player_x, player_y))
+   pygame.display.flip()
 pygame.quit()
+
+
+
 
 
 
