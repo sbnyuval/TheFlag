@@ -1,6 +1,6 @@
 import pygame
 import consts
-
+import random
 pygame.init()
 screen = pygame.display.set_mode((consts.WINDOW_WIDTH, consts.WINDOW_HEIGHT))
 clock = pygame.time.Clock()
@@ -13,7 +13,7 @@ def create_grass(grass_img):
 
 def draw_grass(grass):
     screen.fill((0, 0, 0))
-    screen.blit(grass, (90,90))
+    screen.blit(grass, (random.choice(0,200)))
     pygame.display.flip()
 
 
@@ -24,8 +24,8 @@ while running:
 
     screen.fill("Dark green")
 
-    grass = create_grass("bin/bin/grass.png")
-    pygame.transform.scale(grass, (5,10))
+    grass = create_grass("bin/grass.png")
+    pygame.transform.scale(grass, (5,2))
     draw_grass(grass)
     pygame.display.flip()
     clock.tick(60)
