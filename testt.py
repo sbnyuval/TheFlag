@@ -1,6 +1,5 @@
 import pygame
 import consts
-import soldier
 pygame.init()
 screen = pygame.display.set_mode((consts.WINDOW_WIDTH, consts.WINDOW_HEIGHT))
 pygame.display.set_caption("Soldier Game")
@@ -30,3 +29,5 @@ while running:
     screen.blit(soldier_resized, (player_x, player_y))
     pygame.display.flip()
 pygame.quit()
+
+
