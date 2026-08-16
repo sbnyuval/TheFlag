@@ -7,6 +7,7 @@ flag_image = pygame.image.load("flag.png")
 flag_resized = pygame.transform.scale(flag_image, (consts.FLAG_WIDTH, consts.FLAG_WIDTH))
 flag_x = (consts.WINDOW_WIDTH - flag_image.get_width()) // 2
 flag_y = (consts.WINDOW_HEIGHT - flag_image.get_height()) // 2
+
 running = True
 while running:
     for event in pygame.event.get():

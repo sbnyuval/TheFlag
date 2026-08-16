@@ -7,8 +7,8 @@ pygame.init()
 screen = pygame.display.set_mode((consts.WINDOW_WIDTH, consts.WINDOW_HEIGHT))
 pygame.display.set_caption("The Flag")
 clock = pygame.time.Clock()
-SOLDIER_IMG = pygame.image.load(consts.SOLDIER_IMG)
-soldier_resized = pygame.transform.scale(SOLDIER_IMG, (consts.SOLDIER_BODY_WIDTH, consts.SOLDIER_BODY_HEIGHT))
+soldier_image = pygame.image.load(consts.SOLDIER_IMG)
+soldier_resized = pygame.transform.scale(soldier_image, (consts.SOLDIER_BODY_WIDTH, consts.SOLDIER_BODY_HEIGHT))
 player_x = 0
 player_y = 0
 running = True
