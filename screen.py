@@ -6,7 +6,7 @@ clock = pygame.time.Clock()
 flag_image = pygame.image.load("flag.png")
 flag_resized = pygame.transform.scale(flag_image, (consts.FLAG_WIDTH, consts.FLAG_WIDTH))
 flag_x = (consts.WINDOW_WIDTH - consts.FLAG_WIDTH) // 1
-flag_y = (consts.WINDOW_HEIGHT - consts.FLAG_HEIGHT) // 1
+flag_y = (consts.WINDOW_HEIGHT - consts.FLAG_HEIGHT)
 
 running = True
 while running:
